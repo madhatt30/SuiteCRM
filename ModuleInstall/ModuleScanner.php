@@ -662,7 +662,8 @@ class ModuleScanner{
         static $md5 = array();
         if (empty($md5) && file_exists('files.md5')) {
             include ('files.md5');
-            $md5 = $md5_string;
+            /* fixed */
+            $md5 = $md5_string_calculated;
         }
         if ($path[0] != '.' || $path[1] != '/') {
             $path = './' . $path;
